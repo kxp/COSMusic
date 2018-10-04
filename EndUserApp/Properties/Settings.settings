@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EndUserApp.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EndUserApp_perxMusic_Music" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:2203/Music.asmx</Value>
+    </Setting>
+    <Setting Name="EndUserApp_perxLyrics_Lyrics" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:2693/Lyrics.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

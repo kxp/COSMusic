@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getMusicByNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="n" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMusicByNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMusicByNumberResult" type="tns:MusicPair" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MusicPair">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="autor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="song" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getMusicByNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:getMusicByNumber" />
+  </wsdl:message>
+  <wsdl:message name="getMusicByNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:getMusicByNumberResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MusicSoap">
+    <wsdl:operation name="getMusicByNumber">
+      <wsdl:input message="tns:getMusicByNumberSoapIn" />
+      <wsdl:output message="tns:getMusicByNumberSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MusicSoap" type="tns:MusicSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getMusicByNumber">
+      <soap:operation soapAction="http://tempuri.org/getMusicByNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MusicSoap12" type="tns:MusicSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getMusicByNumber">
+      <soap12:operation soapAction="http://tempuri.org/getMusicByNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Music">
+    <wsdl:port name="MusicSoap" binding="tns:MusicSoap">
+      <soap:address location="http://localhost:2203/Music.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MusicSoap12" binding="tns:MusicSoap12">
+      <soap12:address location="http://localhost:2203/Music.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
