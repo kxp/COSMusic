@@ -61,6 +61,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\prxTranslator\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -78,6 +83,11 @@
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\perxMusic\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\prxTranslator\MyTranslator.wsdl" />
+    <None Include="Web References\prxTranslator\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -100,6 +110,17 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>EndUserApp_perxMusic_Music</CachedSettingsPropName>
     </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:2319/MyTranslator.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\prxTranslator\</RelPath>
+      <UpdateFromURL>http://localhost:2319/MyTranslator.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EndUserApp_prxTranslator_MyTranslator</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://localhost:2693/Lyrics.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\perxLyrics\</RelPath>
@@ -117,6 +138,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\perxLyrics\Lyrics.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\prxTranslator\MyTranslator.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

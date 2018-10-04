@@ -8,5 +8,8 @@
     <Setting Name="EndUserApp_perxLyrics_Lyrics" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://localhost:2693/Lyrics.asmx</Value>
     </Setting>
+    <Setting Name="EndUserApp_prxTranslator_MyTranslator" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:2319/MyTranslator.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

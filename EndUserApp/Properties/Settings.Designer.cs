@@ -42,5 +42,15 @@ namespace EndUserApp.Properties {
                 return ((string)(this["EndUserApp_perxLyrics_Lyrics"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:2319/MyTranslator.asmx")]
+        public string EndUserApp_prxTranslator_MyTranslator {
+            get {
+                return ((string)(this["EndUserApp_prxTranslator_MyTranslator"]));
+            }
+        }
     }
 }

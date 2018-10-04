@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EndUserApp.perxLyrics;
 using EndUserApp.perxMusic;
+using EndUserApp.prxTranslator;
 
 namespace EndUserApp
 {
@@ -18,6 +19,7 @@ namespace EndUserApp
         {
             Music prxm = new Music();
             Lyrics prxl = new Lyrics();
+            MyTranslator prxTranslator = new MyTranslator();
 
             Console.WriteLine("Qual o numero da musica");
             int number = Int32.Parse(Console.ReadLine());
@@ -28,6 +30,9 @@ namespace EndUserApp
 
             var lyrics = prxl.getLyrics(music.autor, music.song);
             Console.WriteLine(lyrics);
+
+            var translated = prxTranslator.Translate(lyrics, "en", "pt");
+            Console.WriteLine(translated);
 
             Console.ReadLine();
         }
